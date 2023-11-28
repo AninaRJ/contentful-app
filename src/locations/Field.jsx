@@ -13,6 +13,7 @@ const HeaderModal = () => {
   return (
     <>
       <ToggleButton variant="secondary" onClick={() => setShown(true)}>Add Section Heading</ToggleButton>
+      <br/>
       <Modal onClose={() => setShown(false)} isShown={isShown}>
           {() => (
             <>
