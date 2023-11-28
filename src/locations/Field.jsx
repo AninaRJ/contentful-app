@@ -28,7 +28,7 @@ const Field = () => {
           )}
         </Card>
       <br/>
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={300} maxHeight={900}>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight="300px" maxHeight="900px">
       </RichTextEditor>
   </>);
 };
