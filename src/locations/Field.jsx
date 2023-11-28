@@ -10,14 +10,15 @@ const Field = () => {
 
   return (<>
     <Card onClick={() => setShow(!show)}>
-          Click on this card
+          Add section header?
           <br />
           {show && (
             <span role="img" aria-label="sparkles">
             </span>
           )}
         </Card>
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}>
+      <br/>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={300} maxHeight={900}>
       </RichTextEditor>
   </>);
 };
