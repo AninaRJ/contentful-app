@@ -7,15 +7,10 @@ import { RichTextEditor } from '@contentful/field-editor-rich-text';
 const Field = () => {
   const sdk = useSDK();
 
-  if(sdk.field.id === 'longFormBody'){
-    return <>
+    return (<>
       <DisplayText>Are sections anchored?</DisplayText>
       <RichTextEditor field={sdk.field}></RichTextEditor>
-    </>;
-  }
-  else{
-    return <></>;
-  }
+    </>);
 };
 
 export default Field;
