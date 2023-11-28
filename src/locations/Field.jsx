@@ -9,16 +9,16 @@ const Field = () => {
   const [show, setShow] = React.useState(false);
 
   return (<>
-    <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}>
-      <Card onClick={() => setShow(!show)}>
-        Click on this card
-        <br />
-        {show && (
-          <span role="img" aria-label="sparkles">
-          </span>
-        )}
-      </Card>
-    </RichTextEditor>
+    <Card onClick={() => setShow(!show)}>
+          Click on this card
+          <br />
+          {show && (
+            <span role="img" aria-label="sparkles">
+            </span>
+          )}
+        </Card>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}>
+      </RichTextEditor>
   </>);
 };
 
