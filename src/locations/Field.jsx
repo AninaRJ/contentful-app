@@ -12,21 +12,19 @@ const Field = () => {
   const [showHeader, setShowHeader] = React.useState(false);
 
   return (<>
-        {!showHeader && <ToggleButton variant="primary" onClick={() => setShowHeader(!showHeader)}>Add Section Heading</ToggleButton>}
-        {
-          showHeader && 
-          <>
-            <Subheading as="span" marginBottom='none'>
-              Section Heading
-            </Subheading>
-            <TextInput 
-              value={sectionHeader} 
-              placeholder="Insert the section header here"
-              name="section-header" 
-              onChange={(e) => setSectionHeader(e.target.value)}>
-            </TextInput>
-          </>
-        }
+        <ToggleButton variant="primary" onClick={() => setShowHeader(!showHeader)}>Add Section Heading</ToggleButton>
+        
+        <>
+          <Subheading as="span" marginBottom='none'>
+            Section Heading
+          </Subheading>
+          <TextInput 
+            value={sectionHeader} 
+            placeholder="Insert the section header here"
+            name="section-header" 
+            onChange={(e) => setSectionHeader(e.target.value)}>
+          </TextInput>
+        </>
       
       <br/><br/>
 
