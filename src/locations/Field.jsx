@@ -14,9 +14,7 @@ const Field = () => {
           Insert section header here
           <br />
           {show && (
-            <span role="text" aria-label="section-header">
-                <TextInput></TextInput>
-            </span>
+              <TextInput></TextInput>
           )}
         </Card>
       <br/>
