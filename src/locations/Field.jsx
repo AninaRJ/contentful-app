@@ -12,6 +12,8 @@ const Field = () => {
   const [sectionHeader, setSectionHeader] = React.useState("");
   const [isShown, setShown] = React.useState(false);
 
+  sdk.field.Label = "Sectional Long Form"
+
   return (<>
         <ToggleButton variant="primary" onClick={() => setShown(true)}>Add Section Heading</ToggleButton>
         <br/>
@@ -57,7 +59,7 @@ const Field = () => {
             </Modal>
         }
       
-      <br/><br/>
+      <br/>
 
       <RichTextEditor sdk={sdk} isInitiallyDisabled={true} />
   </>);
