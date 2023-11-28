@@ -7,12 +7,20 @@ import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 const Field = () => {
   const sdk = useSDK();
 
-  const [anchorSections, setAnchorSections] = useState(false);
+  const [anchorSections, setAnchorSections] = useState("False");
+  const changeSelection = () => {
+    console.log(this.value)
+    setAnchorSections(this.value);
+  }
 
   if(sdk.field.id === 'longFormBody'){
     return <>
       <DisplayText>Are sections anchored?</DisplayText>
-      <BooleanEditor field={sdk.field} onValueChanged={setAnchorSections}></BooleanEditor>
+      <BooleanEditor 
+        field={sdk.field} 
+        parameters={{trueLabel: 'True', falseLabel: 'False'}} 
+        onValueChanged={changeSelection}>
+      </BooleanEditor>
 
       {anchorSections && <>
         <DisplayText>Yep</DisplayText>
