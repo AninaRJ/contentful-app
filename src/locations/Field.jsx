@@ -68,14 +68,21 @@ const LongFormSection = () => {
 }
 
 const Field = () => {
-  const [sectionList, toggleSectionList] = React.useState([<LongFormSection/>]);
+  //const [sectionList, toggleSectionList] = React.useState([<LongFormSection/>]);
+  const [numOfSections, toggleNumOfSections] = React.useState(1);
+
+  const renderedSections = () => {
+    for(var i=1; i< numOfSections; i++){
+        (<LongFormSection/>)
+    }
+  }
 
   return (
         <>
-            {sectionList}
+            {renderedSections}
             <br/>
             <Button variant='primary' 
-                  onClick={() => toggleSectionList(sectionList.push(<LongFormSection/>))}>Add Section</Button>
+                  onClick={() => toggleNumOfSections(numOfSections++)}>Add Section</Button>
         </>
   );
 };
