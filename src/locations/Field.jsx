@@ -56,14 +56,27 @@ const HeaderModal = () => {
   )
 }
 
-const Field = () => {
+const LongFormSection = () => {
   const sdk = useSDK();
   return (
-            <>
-                <HeaderModal/>
-                <br/>
-                <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight="1000px"/>
-            </>
+    <>
+      <HeaderModal/>
+      <br/>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight="1000px"/>
+    </>
+  )
+}
+
+const Field = () => {
+  const [sectionList, toggleSectionList] = React.useState([<LongFormSection/>]);
+
+  return (
+        <>
+            {sectionList}
+            <br/>
+            <Button variant='primary' 
+                  onClick={() => toggleSectionList(sectionList.push(<LongFormSection/>))}>Add Section</Button>
+        </>
   );
 };
 
