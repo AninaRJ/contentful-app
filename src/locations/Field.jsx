@@ -11,9 +11,14 @@ const Field = () => {
   const [sectionHeader, setSectionHeader] = React.useState("");
 
   return (<>
-    <Card onClick={() => setShow(true)}>
-          Insert section header here
-          <br />
+    <Card onClick={() => setShow(true)} margin="none" badge={true}>
+          {
+            !show && 
+            <>
+              Click to insert the section header here
+              <br />
+            </>
+          }
           {show && (
               <TextInput 
                 value={sectionHeader} 
