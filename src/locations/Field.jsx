@@ -61,7 +61,7 @@ const Field = () => {
       
       <br/>
 
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight="1000"/>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight="1000px"/>
   </>);
 };
 
