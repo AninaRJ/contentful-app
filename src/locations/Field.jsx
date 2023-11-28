@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '@contentful/f36-components';
-import { Heading } from '@contentful/f36-components';
+import { Button, PlusIcon } from '@contentful/f36-components';
+import { Subheading } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-components';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
@@ -12,13 +12,13 @@ const Field = () => {
   const [showHeader, setShowHeader] = React.useState(false);
 
   return (<>
-        {!showHeader && <Button variant='secondary' onClick={() => setShowHeader(true)}>Add Section Heading</Button>}
+        {!showHeader && <Button startIcon={<PlusIcon />} variant="primary" onClick={() => setShowHeader(true)}>Add Section Heading</Button>}
         {
           showHeader && 
           <>
-            <Heading as="span" marginBottom='none'>
+            <Subheading as="span" marginBottom='none'>
               Section Heading
-            </Heading>
+            </Subheading>
             <TextInput 
               value={sectionHeader} 
               placeholder="Insert the section header here"
