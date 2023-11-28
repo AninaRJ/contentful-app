@@ -1,9 +1,18 @@
 import React from 'react';
-import { Navbar, Textarea } from '@contentful/f36-components';
+import 'codemirror/lib/codemirror.css'; 
+import { RichTextEditor } from '@contentful/field-editor-rich-text';
+
+import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 
 const Field = () => {
- 
-  return <><Navbar></Navbar><Textarea></Textarea></>;
+  const sdk = useSDK();
+
+  if(sdk.field.id === 'longFormBody'){
+    return <><RichTextEditor sdk={sdk} isInitiallyDisabled={true} /></>;
+  }
+  else{
+    return <><RichTextEditor sdk={sdk} isInitiallyDisabled={false} /></>;
+  }
 };
 
 export default Field;
