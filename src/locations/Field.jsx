@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from '@contentful/f36-components';
+import { TextInput } from '@contentful/f36-components';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
@@ -10,10 +11,11 @@ const Field = () => {
 
   return (<>
     <Card onClick={() => setShow(!show)}>
-          Add section header?
+          Insert section header here
           <br />
           {show && (
-            <span role="img" aria-label="sparkles">
+            <span role="text" aria-label="section-header">
+                <TextInput></TextInput>
             </span>
           )}
         </Card>
