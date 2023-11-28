@@ -84,7 +84,7 @@ const Field = () => {
             {renderedSections}
             <br/>
             <Button variant='primary' 
-                  onClick={() => toggleNumOfSections(numOfSections++)}>Add Section</Button>
+                  onClick={() => toggleNumOfSections(++numOfSections)}>Add Section</Button>
         </>
   );
 };
