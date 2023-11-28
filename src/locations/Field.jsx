@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ToggleButton, Button } from '@contentful/f36-components';
 import { Modal } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-components';
@@ -69,13 +69,16 @@ const LongFormSection = () => {
 
 const Field = () => {
   //const [sectionList, toggleSectionList] = React.useState([<LongFormSection/>]);
-  const [numOfSections, toggleNumOfSections] = React.useState(1);
+  let [numOfSections, toggleNumOfSections] = React.useState(1);
+  let renderedSections = <LongFormSection/>;
 
-  const renderedSections = () => {
-    for(var i=1; i< numOfSections; i++){
-        (<LongFormSection/>)
+  useRef(() => {
+    renderedSections = () => {
+      for(var i=1; i< numOfSections; i++){
+          (<LongFormSection/>)
+      }
     }
-  }
+  })
 
   return (
         <>
