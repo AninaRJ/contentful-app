@@ -63,29 +63,29 @@ const LongFormSection = () => {
     <>
       <HeaderModal/>
       <br/>
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight="1000px"/>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}/>
     </>
   )
 }
 
 const Field = () => {
-  let [numOfSections, toggleNumOfSections] = React.useState(1);
-  let renderedSections = <LongFormSection/>;
+  let sectionsCreated = [<LongFormSection/>];
 
-  useRef(() => {
-    renderedSections = () => {
-      for(var i=1; i< numOfSections; i++){
-          (<LongFormSection/>)
-      }
+  const toggleNumOfSections = (op) => {
+    if(op === 'add'){
+      sectionsCreated.push(<LongFormSection/>)
     }
-  }, [numOfSections]);
+    else if(op === 'remove'){
+      sectionsCreated.pop();
+    }
+  }
 
   return (
         <>
-            {renderedSections}
+            {sectionsCreated}
             <br/>
             <Button variant='primary' 
-                  onClick={() => toggleNumOfSections(++numOfSections)}>Add Section</Button>
+                  onClick={() => toggleNumOfSections('add')}>Add Section</Button>
         </>
   );
 };
