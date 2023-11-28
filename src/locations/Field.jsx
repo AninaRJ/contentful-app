@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '@contentful/f36-components';
+import { Heading } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-components';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
@@ -10,6 +10,9 @@ const Field = () => {
   const [sectionHeader, setSectionHeader] = React.useState("");
 
   return (<>
+      <Heading as="h6">
+        Section Heading
+      </Heading>
       <TextInput 
         value={sectionHeader} 
         placeholder="Insert the section header here"
