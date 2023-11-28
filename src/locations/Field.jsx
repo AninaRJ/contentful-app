@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { ToggleButton, Button } from '@contentful/f36-components';
 import { Modal } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-components';
