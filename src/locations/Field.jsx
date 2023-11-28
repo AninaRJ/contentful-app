@@ -1,5 +1,5 @@
 import React from 'react';
-import { RichTextEditor } from '@contentful/field-editor-rich-text';
+import { BooleanEditor } from '@contentful/field-editor-boolean';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 
@@ -7,10 +7,10 @@ const Field = () => {
   const sdk = useSDK();
 
   if(sdk.field.id === 'longFormBody'){
-    return <><RichTextEditor sdk={sdk} isInitiallyDisabled={true} /></>;
+    return <><BooleanEditor field={sdk.field}></BooleanEditor></>;
   }
   else{
-    return <><RichTextEditor sdk={sdk} isInitiallyDisabled={false} /></>;
+    return <></>;
   }
 };
 
