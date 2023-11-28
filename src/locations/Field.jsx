@@ -68,7 +68,6 @@ const LongFormSection = () => {
 }
 
 const Field = () => {
-  //const [sectionList, toggleSectionList] = React.useState([<LongFormSection/>]);
   let [numOfSections, toggleNumOfSections] = React.useState(1);
   let renderedSections = <LongFormSection/>;
 
@@ -78,7 +77,7 @@ const Field = () => {
           (<LongFormSection/>)
       }
     }
-  })
+  }, [numOfSections]);
 
   return (
         <>
