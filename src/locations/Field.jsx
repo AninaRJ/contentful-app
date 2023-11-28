@@ -8,7 +8,7 @@ import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 const Field = () => {
   const sdk = useSDK();
 
-  const [anchorSections, setAnchorSections] = useState(true);
+  const [anchorSections] = useState(true);
 
   if(sdk.field.id === 'longFormBody'){
     return <>
