@@ -61,7 +61,7 @@ const Field = () => {
       
       <br/>
 
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={true} />
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} />
   </>);
 };
 
