@@ -11,14 +11,9 @@ const Field = () => {
   const [sectionHeader, setSectionHeader] = React.useState("");
 
   return (<>
-    <Card onClick={() => setShow(true)} margin="none" badge={true}>
-          {
-            !show && 
-            <>
-              Click to insert the section header here
-              <br />
-            </>
-          }
+    <Card onClick={() => setShow(!show)} margin="none" badge={true}>
+          Click to insert the section header here
+          <br />
           {show && (
               <TextInput 
                 value={sectionHeader} 
@@ -28,8 +23,7 @@ const Field = () => {
           )}
         </Card>
       <br/>
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight="300px" maxHeight="900px">
-      </RichTextEditor>
+      render( <RichTextEditor sdk={sdk} isInitiallyDisabled={true} />, document.getElementById('root') ); 
   </>);
 };
 
