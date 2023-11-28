@@ -1,5 +1,4 @@
 import React from 'react';
-import 'codemirror/lib/codemirror.css'; 
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
