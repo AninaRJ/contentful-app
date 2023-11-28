@@ -1,7 +1,8 @@
 import React from 'react';
-import { ToggleButton } from '@contentful/f36-components';
+import { ToggleButton, Button } from '@contentful/f36-components';
 import { Modal } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-components';
+import { Form, FormControl } from '@contentful/f36-components';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
@@ -20,17 +21,37 @@ const Field = () => {
                 <>
                   <Modal.Header
                     title="Section Heading"
-                    subtitle="subtitle"
                     onClose={() => setShown(false)}
                   />
                   <Modal.Content>
-                      <TextInput 
-                        value={sectionHeader} 
-                        placeholder="Insert the section header here"
-                        name="section-header" 
-                        onChange={(e) => setSectionHeader(e.target.value)}>
-                      </TextInput>
+                    <Form>
+                      <FormControl>
+                        <FormControl.Label isRequired>Section Header</FormControl.Label>
+                        <TextInput
+                          maxLength={20}
+                          value={sectionHeader}
+                          placeholder="For example Product, Blog Post, Author"
+                          onChange={(e) => setSectionHeader(e.target.value)}
+                        />
+                      </FormControl>
+                    </Form>
                   </Modal.Content>
+                  <Modal.Controls>
+                    <Button
+                      size="small"
+                      variant="transparent"
+                      onClick={() => setShown(false)}
+                    >
+                      Close
+                    </Button>
+                    <Button
+                      size="small"
+                      variant="positive"
+                      isDisabled={sectionHeader.length === 0}
+                    >
+                      Save
+                    </Button>
+                  </Modal.Controls>
                 </>
               )}
             </Modal>
