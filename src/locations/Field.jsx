@@ -3,8 +3,6 @@ import { ToggleButton, Button } from '@contentful/f36-components';
 import { Modal } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-components';
 import { Form, FormControl } from '@contentful/f36-components';
-
-import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
 
 const HeaderModal = () => {
@@ -58,12 +56,11 @@ const HeaderModal = () => {
 }
 
 const LongFormSection = () => {
-  const sdk = useSDK();
   return (
     <>
       <HeaderModal/>
       <br/>
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}/>
+      <RichTextEditor isInitiallyDisabled={false} minHeight={900}/>
     </>
   )
 }
