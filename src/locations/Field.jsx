@@ -11,8 +11,7 @@ const Field = () => {
   if(sdk.field.id === 'longFormBody'){
     return <>
       <DisplayText>Are sections anchored?</DisplayText>
-      <BooleanEditor  
-        field={sdk.field}>
+      <BooleanEditor >
       </BooleanEditor>
 
       <SingleLineEditor field={sdk.field} locales={sdk.locales}></SingleLineEditor>
