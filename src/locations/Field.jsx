@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, PlusIcon } from '@contentful/f36-components';
+import { ToggleButton } from '@contentful/f36-components';
 import { Subheading } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-components';
 
@@ -12,7 +12,7 @@ const Field = () => {
   const [showHeader, setShowHeader] = React.useState(false);
 
   return (<>
-        {!showHeader && <Button startIcon={<PlusIcon />} variant="primary" onClick={() => setShowHeader(true)}>Add Section Heading</Button>}
+        {!showHeader && <ToggleButton variant="primary" onClick={() => setShowHeader(!showHeader)}>Add Section Heading</ToggleButton>}
         {
           showHeader && 
           <>
@@ -23,7 +23,6 @@ const Field = () => {
               value={sectionHeader} 
               placeholder="Insert the section header here"
               name="section-header" 
-              onBlur={() => setShowHeader(false)}
               onChange={(e) => setSectionHeader(e.target.value)}>
             </TextInput>
           </>
