@@ -9,7 +9,7 @@ const Field = () => {
 
     return (<>
       <DisplayText>Are sections anchored?</DisplayText>
-      <RichTextEditor field={sdk.field}></RichTextEditor>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false}></RichTextEditor>
     </>);
 };
 
