@@ -10,7 +10,7 @@ const Field = () => {
   const [sectionHeader, setSectionHeader] = React.useState("");
 
   return (<>
-      <Heading as="h6">
+      <Heading as="h6" marginBottom='none'>
         Section Heading
       </Heading>
       <TextInput 
@@ -20,7 +20,7 @@ const Field = () => {
         onChange={(e) => setSectionHeader(e.target.value)}>
       </TextInput>
       <br/>
-      render( <RichTextEditor sdk={sdk} isInitiallyDisabled={true} />, document.getElementById('root') ); 
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={true} />
   </>);
 };
 
