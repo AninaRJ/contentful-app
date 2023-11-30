@@ -1,9 +1,6 @@
 import React from 'react';
 import "codemirror/lib/codemirror.css";
 
-import '@contentful/field-editor-date/styles/styles.css';
-import { FieldWrapper } from '@contentful/default-field-editors';
-
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
 
@@ -62,9 +59,9 @@ const HeaderModal = () => {
 const LongFormSection = () => {
   let sdk = useSDK();
   return (
-    <FieldWrapper sdk={sdk} name="section-group">
+    <>
       <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}/>
-    </FieldWrapper>
+    </>
   )
 }
 
