@@ -1,12 +1,9 @@
 import React from 'react';
-import { ToggleButton, Button } from '@contentful/f36-components';
-import { Modal } from '@contentful/f36-components';
-import { TextInput } from '@contentful/f36-components';
-import { Form, FormControl } from '@contentful/f36-components';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
 
+/* 
 const HeaderModal = () => {
   const [sectionHeader, setSectionHeader] = React.useState("");
   const [isShown, setShown] = React.useState(false);
@@ -56,36 +53,21 @@ const HeaderModal = () => {
     </>
   )
 }
+*/
 
 const LongFormSection = () => {
   let sdk = useSDK();
   return (
     <>
-      <HeaderModal/>
-      <br/>
       <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}/>
     </>
   )
 }
 
 const Field = () => {
-  let sectionsCreated = [<LongFormSection/>];
-
-  const toggleNumOfSections = (op) => {
-    if(op === 'add'){
-      sectionsCreated.push(<LongFormSection/>)
-    }
-    else if(op === 'remove'){
-      sectionsCreated.pop();
-    }
-  }
-
   return (
         <>
-            {sectionsCreated}
-            <br/>
-            <Button variant='primary' 
-                  onClick={() => toggleNumOfSections('add')}>Add Section</Button>
+            <LongFormSection/>
         </>
   );
 };
