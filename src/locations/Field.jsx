@@ -3,6 +3,7 @@ import "codemirror/lib/codemirror.css";
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { renderRichTextDialog } from '@contentful/field-editor-rich-text'; 
+import { render } from 'react-dom';
 
 /* 
 const HeaderModal = () => {
@@ -58,9 +59,10 @@ const HeaderModal = () => {
 
 const LongFormSection = () => {
   let sdk = useSDK();
+  let richTextContent = () => render(renderRichTextDialog(sdk), document.getElementById('root'));
   return (
     <>
-      {render(renderRichTextDialog(sdk), document.getElementById('root')); }
+      {richTextContent}
     </>
   )
 }
