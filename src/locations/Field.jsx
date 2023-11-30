@@ -60,7 +60,7 @@ const LongFormSection = () => {
   let sdk = useSDK();
   return (
     <>
-      <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}/>
+      render( <RichTextEditor sdk={sdk} isInitiallyDisabled={true} />, document.getElementById('root') ); 
     </>
   )
 }
