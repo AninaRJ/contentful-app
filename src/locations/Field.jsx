@@ -2,8 +2,7 @@ import React from 'react';
 import "codemirror/lib/codemirror.css";
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
-import { renderRichTextDialog } from '@contentful/field-editor-rich-text'; 
-import { render } from 'react-dom';
+import { RichTextEditor } from '@contentful/field-editor-rich-text';
 
 /* 
 const HeaderModal = () => {
@@ -59,10 +58,9 @@ const HeaderModal = () => {
 
 const LongFormSection = () => {
   let sdk = useSDK();
-  let richTextContent = () => render(renderRichTextDialog(sdk), document.getElementById('root'));
   return (
     <>
-      {richTextContent}
+      <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}/>
     </>
   )
 }
