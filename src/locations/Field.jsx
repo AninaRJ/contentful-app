@@ -1,9 +1,11 @@
 import React from 'react';
 import "codemirror/lib/codemirror.css";
 
+import '@contentful/field-editor-date/styles/styles.css';
+import { FieldWrapper } from 'packages/default-field-editors';
+
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
-import { Note } from '@contentful/f36-components';
 
 /* 
 const HeaderModal = () => {
@@ -60,11 +62,9 @@ const HeaderModal = () => {
 const LongFormSection = () => {
   let sdk = useSDK();
   return (
-    <>
-      <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}>
-          <Note variant="neutral">Ranjani</Note>
-        </RichTextEditor>
-    </>
+    <FieldWrapper sdk={sdk} name="section-group">
+      <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}/>
+    </FieldWrapper>
   )
 }
 
