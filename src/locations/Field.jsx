@@ -58,9 +58,10 @@ const HeaderModal = () => {
 
 const LongFormSection = () => {
   let sdk = useSDK();
+  const marks = ['Section']
   return (
     <>
-      <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}/>
+      <RichTextEditor restrictedMarks={marks} sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}/>
     </>
   )
 }
