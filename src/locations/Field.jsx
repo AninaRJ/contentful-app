@@ -2,7 +2,7 @@ import React from 'react';
 import "codemirror/lib/codemirror.css";
 
 import '@contentful/field-editor-date/styles/styles.css';
-import { FieldWrapper } from 'packages/default-field-editors';
+import { FieldWrapper } from '@contentful/default-field-editors';
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
