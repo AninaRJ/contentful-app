@@ -3,6 +3,7 @@ import "codemirror/lib/codemirror.css";
 
 import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
 import { RichTextEditor } from '@contentful/field-editor-rich-text';
+import { Note } from '@contentful/f36-components';
 
 /* 
 const HeaderModal = () => {
@@ -60,7 +61,9 @@ const LongFormSection = () => {
   let sdk = useSDK();
   return (
     <>
-      <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}/>
+      <RichTextEditor sdk={sdk} isDisabled={false} actionsDisabled={false} isInitiallyDisabled={false} minHeight="500" maxHeight="900" isToolbarHidden={false}>
+          <Note variant="neutral">Ranjani</Note>
+        </RichTextEditor>
     </>
   )
 }
