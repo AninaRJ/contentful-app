@@ -59,7 +59,7 @@ const LongFormSection = () => {
   let sdk = useSDK();
   return (
     <>
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}/>
+      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} height="100%"/>
     </>
   )
 }
