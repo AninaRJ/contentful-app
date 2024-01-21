@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
-import { Button, Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
+import { Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
 import { ExternalLinkIcon, FormatBoldIcon, FormatItalicIcon, FormatUnderlinedIcon, LinkIcon, ListBulletedIcon, ListNumberedIcon } from '@contentful/f36-icons';
 
 import { css } from 'emotion';
@@ -90,27 +90,17 @@ function IconButtonToolbarExample() {
         </Tooltip>
         
       </Stack>
-      <Button>Example button</Button>
+      <Textarea></Textarea>
     </Flex>
   );
 }
 
 const Field = () => {
   let sdk = useSDK();
-
-  
-  const [value, setValue] = useState('');
   return (
-    <FormControl isRequired isInvalid={!value} sdk={sdk}>
+    <FormControl sdk={sdk}>
       <FormControl.Label>Custom Rich Text Text</FormControl.Label>
       {IconButtonToolbarExample()}
-      <Textarea onChange={setValue}>
-      </Textarea>
-      {!value && (
-        <FormControl.ValidationMessage>
-          Please enter some text
-        </FormControl.ValidationMessage>
-      )}
     </FormControl>
   );
 };
