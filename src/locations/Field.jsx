@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
 import { Button, ButtonGroup, Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
@@ -21,32 +21,32 @@ const styles = {
   })
 };
 
-// function getSelectedText() // JavaScript
-// {
-//     // Obtain the object reference for the <textarea>
-//     var txtarea = document.getElementById("targetContent");
+function getSelectedText() // JavaScript
+{
+    // Obtain the object reference for the <textarea>
+    var txtarea = document.getElementById("targetContent");
 
-//     // Obtain the index of the first selected character
-//     var start = txtarea.selectionStart;
+    // Obtain the index of the first selected character
+    var start = txtarea.selectionStart;
 
-//     // Obtain the index of the last selected character
-//     var finish = txtarea.selectionEnd;
+    // Obtain the index of the last selected character
+    var finish = txtarea.selectionEnd;
 
-//     // Obtain the selected text
-//     return txtarea.value.substring(start, finish);
-// }
+    // Obtain the selected text
+    return txtarea.value.substring(start, finish);
+}
 
 
 
 function formatText(style){
-  // switch (style) {
-  //   case 'bold': {
-  //     document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
-  //     break;
-  //   }
-  //   default:
-  //     break;
-  // }
+  switch (style) {
+    case 'bold': {
+      document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
+      break;
+    }
+    default:
+      break;
+  }
 }
 
 function IconButtonToolbarExample() {
@@ -156,14 +156,13 @@ function IconButtonToolbarExample() {
 
 const Field = () => {
   let sdk = useSDK();
-  const [value, setValue] = useState('');
 
   return (
     <Flex>
     <FormControl sdk={sdk}>
       <FormControl.Label>Custom Rich Text Text</FormControl.Label>
       {IconButtonToolbarExample()}
-      <Textarea value={value} onChange={setValue} id='targetContent' className={styles.richText}>
+      <Textarea id='targetContent' className={styles.richText}>
       </Textarea>
     </FormControl>
     </Flex>
