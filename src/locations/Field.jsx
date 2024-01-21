@@ -21,22 +21,20 @@ const styles = {
   })
 };
 
-function getSelectedText() // JavaScript
-{
-    // Obtain the object reference for the <textarea>
-    var txtarea = document.getElementById("targetContent");
+// function getSelectedText() // JavaScript
+// {
+//     // Obtain the object reference for the <textarea>
+//     var txtarea = document.getElementById("targetContent");
 
-    // Obtain the index of the first selected character
-    var start = txtarea.selectionStart;
+//     // Obtain the index of the first selected character
+//     var start = txtarea.selectionStart;
 
-    // Obtain the index of the last selected character
-    var finish = txtarea.selectionEnd;
+//     // Obtain the index of the last selected character
+//     var finish = txtarea.selectionEnd;
 
-    // Obtain the selected text
-    return txtarea.value.substring(start, finish);
-}
-
-
+//     // Obtain the selected text
+//     return txtarea.value.substring(start, finish);
+// }
 
 function formatText(style){
  if(style === 'bold'){
