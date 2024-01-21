@@ -42,7 +42,7 @@ const styles = {
 function formatText(style){
   var txtarea = document.getElementById("targetContent");
  if(style === 'bold'){
-    console.log(txtarea.value)
+    txtarea.innerText = 'Castle'
  }
 }
 
@@ -160,7 +160,7 @@ const Field = () => {
     <Flex>
     <FormControl sdk={sdk}  css={styles.formControl}>
       {IconButtonToolbarExample()}
-      <Textarea id='targetContent' className={styles.richText}>
+      <Textarea id='targetContent' className={styles.richText} >
       </Textarea>
     </FormControl>
     </Flex>
