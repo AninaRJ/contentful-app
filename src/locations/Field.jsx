@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
 import { Button, ButtonGroup, Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
@@ -15,7 +15,6 @@ function IconButtonToolbarExample() {
     }),
   };
   return (
-    <Flex>
     <Flex
       justifyContent="space-between"
       className={styles.editorToolbarContainer}
@@ -115,19 +114,24 @@ function IconButtonToolbarExample() {
         </ButtonGroup>
       </Stack>
     </Flex>
-    <Stack>
-      <Textarea></Textarea>
-    </Stack>
-    </Flex>
   );
 }
 
 const Field = () => {
   let sdk = useSDK();
+  const [value, setValue] = useState('');
+  
   return (
-    <FormControl sdk={sdk}>
+    <FormControl isRequired isInvalid={!value} sdk={sdk}>
       <FormControl.Label>Custom Rich Text Text</FormControl.Label>
       {IconButtonToolbarExample()}
+      <Textarea onChange={setValue}>
+      </Textarea>
+      {!value && (
+        <FormControl.ValidationMessage>
+          Please enter some text
+        </FormControl.ValidationMessage>
+      )}
     </FormControl>
   );
 };
