@@ -40,7 +40,7 @@ function getSelectedText() // JavaScript
 
 function formatText(style){
  if(style === 'bold'){
-  document.getElementById('targetContent').value = '<b>' + getSelectedText() + '</b>';
+  console.log(getSelectedText())
  }
 }
 
