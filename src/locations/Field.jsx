@@ -37,14 +37,14 @@ function getSelectedText() // JavaScript
 
 
 function formatText(style){
-  switch (style) {
-    case 'bold': {
-      document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
-      break;
-    }
-    default:
-      break;
-  }
+  // switch (style) {
+  //   case 'bold': {
+  //     document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
+  //     break;
+  //   }
+  //   default:
+  //     break;
+  // }
 }
 
 function IconButtonToolbarExample() {
