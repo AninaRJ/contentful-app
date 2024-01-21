@@ -15,11 +15,11 @@ function IconButtonToolbarExample() {
     }),
   };
   return (
+    <Flex>
     <Flex
       justifyContent="space-between"
       className={styles.editorToolbarContainer}
       padding="spacingXs"
-      as="div"
     >
       <Stack spacing="spacingXs">
         <Tooltip content="Bold">
@@ -109,8 +109,8 @@ function IconButtonToolbarExample() {
         </Tooltip>
         
       </Stack>
-      <br/><br/>
-      <Textarea></Textarea>
+    </Flex>
+    <Textarea></Textarea>
     </Flex>
   );
 }
