@@ -51,7 +51,7 @@ const Field = () => {
     <FormControl isRequired isInvalid={!value} sdk={sdk}>
       <FormControl.Label>Custom Rich Text Text</FormControl.Label>
       {IconButtonToolbarExample()}
-      <Textarea>
+      <Textarea onChange={setValue}>
       </Textarea>
       {!value && (
         <FormControl.ValidationMessage>
