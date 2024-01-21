@@ -6,7 +6,6 @@ import { ExternalLinkIcon, FormatBoldIcon, FormatItalicIcon, FormatUnderlinedIco
 
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { RichTextEditor } from '@contentful/field-editor-rich-text';
 
 function IconButtonToolbarExample() {
   const styles = {
@@ -135,7 +134,6 @@ const Field = () => {
         </FormControl.ValidationMessage>
       )}
     </FormControl>
-    <RichTextEditor editorToolbarContainer={IconButtonToolbarExample}></RichTextEditor>
     </Flex>
   );
 };
