@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
-import { Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
+import { Button, ButtonGroup, Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
 import { ExternalLinkIcon, FormatBoldIcon, FormatItalicIcon, FormatUnderlinedIcon, HorizontalRuleIcon, LinkIcon, ListBulletedIcon, ListNumberedIcon, QuoteIcon } from '@contentful/f36-icons';
 
 import { css } from 'emotion';
@@ -101,8 +101,23 @@ function IconButtonToolbarExample() {
         </Tooltip>
         
       </Stack>
+        <Stack flexDirection="column">
+        <ButtonGroup>
+          <Button variant="secondary" size="small">
+            Align Left
+          </Button>
+          <Button variant="secondary" size="small">
+            Align Right
+          </Button>
+          <Button variant="secondary" size="small">
+            Align Center
+          </Button>
+        </ButtonGroup>
+      </Stack>
     </Flex>
-    <Textarea></Textarea>
+    <Stack>
+      <Textarea></Textarea>
+    </Stack>
     </Flex>
   );
 }
