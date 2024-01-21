@@ -46,14 +46,6 @@ function IconButtonToolbarExample() {
             size="small"
           />
         </Tooltip>
-        <Tooltip content="More">
-          <IconButton
-            aria-label="Toggle more"
-            icon={<FormatUnderlinedIcon />}
-            variant="transparent"
-            size="small"
-          />
-        </Tooltip>
         <Tooltip content="External Link">
           <IconButton
               aria-label="Toggle External Link"
