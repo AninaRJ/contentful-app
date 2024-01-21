@@ -39,24 +39,22 @@ function getSelectedText() // JavaScript
 
 
 function formatText(style){
-  console.log(getSelectedText)
-  console.log(style)
-  // switch (style) {
-  //   case 'bold': {
-  //     document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
-  //     break;
-  //   }
-  //   case 'italic': {
-  //     document.getElementById("targetContent").innerHTML = '<i'> + getSelectedText() + '</i>';
-  //     break;
-  //   }
-  //   case 'underline': {
-  //     document.getElementById("targetContent").innerHTML = '<u'> + getSelectedText() + '</u>';
-  //     break;
-  //   }
-  //   default:
-  //     break;
-  // }
+  switch (style) {
+    case 'bold': {
+      document.getElementById("targetContent").value = '<strong'> + getSelectedText() + '</strong>';
+      break;
+    }
+    case 'italic': {
+      document.getElementById("targetContent").value = '<i'> + getSelectedText() + '</i>';
+      break;
+    }
+    case 'underline': {
+      document.getElementById("targetContent").value = '<u'> + getSelectedText() + '</u>';
+      break;
+    }
+    default:
+      break;
+  }
 }
 
 function IconButtonToolbarExample() {
