@@ -18,6 +18,9 @@ const styles = {
     width: 700,
     borderRadius: tokens.borderRadiusMedium,
     borderTop: 'none'
+  }),
+  formControl: css({
+    height: 500
   })
 };
 
@@ -37,8 +40,9 @@ const styles = {
 // }
 
 function formatText(style){
+  var txtarea = document.getElementById("targetContent");
  if(style === 'bold'){
-  alert("hi")
+    txtarea.nodeValue = 'Ranjaniiiiiiii'
  }
 }
 
@@ -154,8 +158,7 @@ const Field = () => {
 
   return (
     <Flex>
-    <FormControl sdk={sdk}>
-      <FormControl.Label>Custom Rich Text Text</FormControl.Label>
+    <FormControl sdk={sdk}  css={styles.formControl}>
       {IconButtonToolbarExample()}
       <Textarea id='targetContent' className={styles.richText}>
       </Textarea>
