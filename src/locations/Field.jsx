@@ -2,7 +2,7 @@ import React from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
 import { Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
-import { ExternalLinkIcon, FormatBoldIcon, FormatItalicIcon, FormatUnderlinedIcon, LinkIcon, ListBulletedIcon, ListNumberedIcon } from '@contentful/f36-icons';
+import { ExternalLinkIcon, FormatBoldIcon, FormatItalicIcon, FormatUnderlinedIcon, HorizontalRuleIcon, LinkIcon, ListBulletedIcon, ListNumberedIcon, QuoteIcon } from '@contentful/f36-icons';
 
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
@@ -88,8 +88,27 @@ function IconButtonToolbarExample() {
               size="small"
             />
         </Tooltip>
+
+        <Tooltip content="Quote">
+          <IconButton
+              aria-label="Toggle Quote"
+              icon={<QuoteIcon />}
+              variant="transparent"
+              size="small"
+            />
+        </Tooltip>
+
+        <Tooltip content="Horizontal Rule">
+          <IconButton
+              aria-label="Toggle Horizontal Rule Icon"
+              icon={<HorizontalRuleIcon />}
+              variant="transparent"
+              size="small"
+            />
+        </Tooltip>
         
       </Stack>
+      <br/>
       <Textarea></Textarea>
     </Flex>
   );
