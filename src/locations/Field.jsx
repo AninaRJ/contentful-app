@@ -42,8 +42,7 @@ const styles = {
 function formatText(style){
   var txtarea = document.getElementById("targetContent");
  if(style === 'bold'){
-  console.log("hi")
-  console.log(txtarea)
+    console.log(txtarea.value)
  }
 }
 
