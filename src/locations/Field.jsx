@@ -8,7 +8,7 @@ const Field = () => {
 
   const [value, setValue] = useState('your-email@domain.com');
   return (
-    <FormControl isRequired isInvalid={!value}>
+    <FormControl isRequired isInvalid={!value} sdk={sdk}>
       <FormControl.Label>Email</FormControl.Label>
       <TextInput
         value={value}
