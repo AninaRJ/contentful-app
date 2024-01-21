@@ -14,8 +14,8 @@ const styles = {
     borderBottom: 'none'
   }),
   richText: css({
-    height: 700,
-    width: 100,
+    height: 500,
+    width: 700,
     borderRadius: tokens.borderRadiusMedium,
     borderTop: 'none'
   })
@@ -160,10 +160,10 @@ const Field = () => {
 
   return (
     <Flex>
-    <FormControl isInvalid={!value} sdk={sdk}>
+    <FormControl sdk={sdk}>
       <FormControl.Label>Custom Rich Text Text</FormControl.Label>
       {IconButtonToolbarExample()}
-      <Textarea onChange={setValue} id='targetContent' className={styles.richText}>
+      <Textarea value={value} onChange={setValue} id='targetContent' className={styles.richText}>
       </Textarea>
     </FormControl>
     </Flex>
