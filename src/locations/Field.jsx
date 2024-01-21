@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
-import { Button, ButtonGroup, Flex, FormControl, IconButton, Stack, TextInput, Tooltip } from '@contentful/f36-components';
+import { Button, ButtonGroup, Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
 import { ExternalLinkIcon, FormatBoldIcon, FormatItalicIcon, FormatUnderlinedIcon, HorizontalRuleIcon, LinkIcon, ListBulletedIcon, ListNumberedIcon, QuoteIcon } from '@contentful/f36-icons';
 
 import { css } from 'emotion';
@@ -11,11 +11,13 @@ const styles = {
   editorToolbarContainer: css({
     backgroundColor: tokens.gray200,
     borderRadius: tokens.borderRadiusMedium,
+    borderBottom: 'none'
   }),
   richText: css({
-    height: 500,
+    height: 700,
     width: 100,
-    borderRadius: tokens.borderRadiusMedium
+    borderRadius: tokens.borderRadiusMedium,
+    borderTop: 'none'
   })
 };
 
@@ -158,16 +160,11 @@ const Field = () => {
 
   return (
     <Flex>
-    <FormControl isRequired isInvalid={!value} sdk={sdk}>
+    <FormControl isInvalid={!value} sdk={sdk}>
       <FormControl.Label>Custom Rich Text Text</FormControl.Label>
       {IconButtonToolbarExample()}
-      <TextInput onChange={setValue} id='targetContent' className={styles.richText}>
-      </TextInput>
-      {!value && (
-        <FormControl.ValidationMessage>
-          Please enter some text
-        </FormControl.ValidationMessage>
-      )}
+      <Textarea onChange={setValue} id='targetContent' className={styles.richText}>
+      </Textarea>
     </FormControl>
     </Flex>
   );
