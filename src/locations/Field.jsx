@@ -39,14 +39,24 @@ function getSelectedText() // JavaScript
 
 
 function formatText(style){
-  switch (style) {
-    case 'bold': {
-      document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
-      break;
-    }
-    default:
-      break;
-  }
+  console.log(getSelectedText)
+  console.log(style)
+  // switch (style) {
+  //   case 'bold': {
+  //     document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
+  //     break;
+  //   }
+  //   case 'italic': {
+  //     document.getElementById("targetContent").innerHTML = '<i'> + getSelectedText() + '</i>';
+  //     break;
+  //   }
+  //   case 'underline': {
+  //     document.getElementById("targetContent").innerHTML = '<u'> + getSelectedText() + '</u>';
+  //     break;
+  //   }
+  //   default:
+  //     break;
+  // }
 }
 
 function IconButtonToolbarExample() {
@@ -72,6 +82,7 @@ function IconButtonToolbarExample() {
             icon={<FormatItalicIcon />}
             variant="transparent"
             size="small"
+            onChange={formatText('italic')}
           />
         </Tooltip>
         <Tooltip content="Underline">
@@ -80,6 +91,7 @@ function IconButtonToolbarExample() {
             icon={<FormatUnderlinedIcon />}
             variant="transparent"
             size="small"
+            onChange={formatText('underline')}
           />
         </Tooltip>
         <Tooltip content="External Link">
