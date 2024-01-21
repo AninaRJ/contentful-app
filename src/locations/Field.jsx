@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { /* useCMA, */ useSDK } from '@contentful/react-apps-toolkit';
-import { RichTextEditor } from '@contentful/field-editor-rich-text';
+import {  useSDK } from '@contentful/react-apps-toolkit';
+import { FormControl, TextInput } from '@contentful/f36-components';
 
 const Field = () => {
   let sdk = useSDK();
+
+  const [value, setValue] = useState('your-email@domain.com');
   return (
-    <>
-      <RichTextEditor sdk={sdk} isInitiallyDisabled={false} minHeight={900}/>
-    </>
-  )
+    <FormControl isRequired isInvalid={!value}>
+      <FormControl.Label>Email</FormControl.Label>
+      <TextInput
+        value={value}
+        type="email"
+        name="email"
+        placeholder="your-email@domain.com"
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <FormControl.HelpText>Provide your email address</FormControl.HelpText>
+      {!value && (
+        <FormControl.ValidationMessage>
+          Please, provide your email
+        </FormControl.ValidationMessage>
+      )}
+    </FormControl>
+  );
 };
 
 export default Field;
