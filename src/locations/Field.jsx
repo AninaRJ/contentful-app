@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
 import { Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
