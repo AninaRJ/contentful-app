@@ -1,19 +1,53 @@
 import React, {useState} from 'react';
 
 import {  useSDK } from '@contentful/react-apps-toolkit';
-import { Button, ButtonGroup, Flex, FormControl, IconButton, Stack, Textarea, Tooltip } from '@contentful/f36-components';
+import { Button, ButtonGroup, Flex, FormControl, IconButton, Stack, TextInput, Tooltip } from '@contentful/f36-components';
 import { ExternalLinkIcon, FormatBoldIcon, FormatItalicIcon, FormatUnderlinedIcon, HorizontalRuleIcon, LinkIcon, ListBulletedIcon, ListNumberedIcon, QuoteIcon } from '@contentful/f36-icons';
 
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
+const styles = {
+  editorToolbarContainer: css({
+    backgroundColor: tokens.gray200,
+    borderRadius: tokens.borderRadiusMedium,
+  }),
+  richText: css({
+    height: 500,
+    width: 100,
+    borderRadius: tokens.borderRadiusMedium
+  })
+};
+
+function getSelectedText() // JavaScript
+{
+    // Obtain the object reference for the <textarea>
+    var txtarea = document.getElementById("targetContent");
+
+    // Obtain the index of the first selected character
+    var start = txtarea.selectionStart;
+
+    // Obtain the index of the last selected character
+    var finish = txtarea.selectionEnd;
+
+    // Obtain the selected text
+    return txtarea.value.substring(start, finish);
+}
+
+
+
+function formatText(style){
+  switch (style) {
+    case 'bold': {
+      document.getElementById("targetContent").innerHTML = '<strong'> + getSelectedText() + '</strong>';
+      break;
+    }
+    default:
+      break;
+  }
+}
+
 function IconButtonToolbarExample() {
-  const styles = {
-    editorToolbarContainer: css({
-      backgroundColor: tokens.gray200,
-      borderRadius: tokens.borderRadiusMedium,
-    }),
-  };
   return (
     <Flex
       justifyContent="space-between"
@@ -27,6 +61,7 @@ function IconButtonToolbarExample() {
             icon={<FormatBoldIcon />}
             variant="transparent"
             size="small"
+            onChange={formatText('bold')}
           />
         </Tooltip>
         <Tooltip content="Italic">
@@ -120,14 +155,14 @@ function IconButtonToolbarExample() {
 const Field = () => {
   let sdk = useSDK();
   const [value, setValue] = useState('');
-  
+
   return (
     <Flex>
     <FormControl isRequired isInvalid={!value} sdk={sdk}>
       <FormControl.Label>Custom Rich Text Text</FormControl.Label>
       {IconButtonToolbarExample()}
-      <Textarea onChange={setValue}>
-      </Textarea>
+      <TextInput onChange={setValue} id='targetContent' className={styles.richText}>
+      </TextInput>
       {!value && (
         <FormControl.ValidationMessage>
           Please enter some text
