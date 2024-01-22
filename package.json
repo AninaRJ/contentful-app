@@ -1,6 +1,6 @@
 {
-  "name": "my-custom-app",
-  "version": "0.1.0",
+  "name": "rich-text-app",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@contentful/app-sdk": "^4.17.1",
